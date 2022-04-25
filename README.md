@@ -5,7 +5,6 @@
 This introductory R workshop aims to teach participants with little or no programming experience the basics of the R statistical programming language for reproducible laboratory data analytics. R is a freely available programming environment that is aimed squarely at common activities in data analysis including complex data manipulation, statistical analysis, automation, and publication-quality data visualization. We will introduce basic concepts of R programming as well as more generalizable best practices in working with laboratory data. 
 
 - Instructors: 
-  * [Daniel Herman](http://pathology.med.upenn.edu/department/people/906/daniel-s-herman)
   * [Stephan Kadauke](https://www.linkedin.com/in/skadauke/)
   * [Patrick Mathias](https://www.linkedin.com/in/pcmathias/)
   * [Amrom Obstfeld](https://www.chop.edu/doctors/obstfeld-amron)
@@ -18,31 +17,22 @@ This introductory R workshop aims to teach participants with little or no progra
 
 For the best experience, please have the following ready before the workshop begins:
 
-- Preferably two monitors (or two laptops), one for the Zoom conference software, and one in which you will work. 
-- Install the latest version of [Zoom](https://zoom.us/download).
 - Install the latest version of [Google Chrome](https://www.google.com/chrome/) as some [older browsers](https://support.rstudio.com/hc/en-us/articles/227449447-Supported-browsers-for-RStudio-Connect) may not be compatible with the RStudio application).
-- We may need to use RStudio Cloud as a backup training environment. Please sign up for a free account [here](https://rstudio.cloud/).
+- We may need to use "RStudio Cloud" as a backup training environment. Please sign up for a free account [here](https://rstudio.cloud/).
 
 ### Get Set...
 
 - User specific usernames and passwords will be emailed to you shortly before the workshop. Please have these available. 
-- Calendar invites with Zoom details will be sent prior to the workshop.
-- Join the pre-course technology/AV check sessions tentatively schedule for 7/14/2021 at 1pm ET- details are in the pre-course email.
 - Please complete the following survey so we can better understand your R experience and what you want out of the course: [API R Workshop Participant Survey](https://forms.gle/Xe3U71ZBZRmrP2E87).
 
 ### Go!
 
-The workshop is scheduled to begin on 7/15 at 1 pm ET. Please make every effort to log into the Zoom conference 10 - 15 minutes early to allow time to get settled, ensure your computer audio and video is set up, and get RStudio cloud up and running.
+The workshop is scheduled to begin on 5/9 at 8 am ET. Please make every effort to arrive  10 - 15 minutes early to allow time to get settled, ensure your computer is set up, and get RStudio up and running.
 
 ## Accessing/interacting with the course content
 
-1. Course content will be pre-loaded in the RStudio instance and is available for download there as a .zip file.
-2. The content is available at [our course github page](https://github.com/amromeo/api_r2021) and can be downloaded from there as well.
-
-## A note on the mechanics and etiquette of the virtual workshop
-* Please do not use anyone else's username.
-* Please refrain from screen grabbing other user's information, recording the workshop, or otherwise disrupting the flow of the Zoom Meeting.
-* Please exercise appropriate Zoom etiquette by muting your microphone during sessions. Breakout sessions will be used for those who request additional one-one-one assistance during exercises.
+1. Course content will be pre-loaded in the RStudio instance that we will be working with and is available for download there as a .zip file.
+2. The content is available at [our course github page](https://github.com/amromeo/api_r2022) and can be downloaded from there as well.
 
 ## Installing RStudio onto your own computer
 
