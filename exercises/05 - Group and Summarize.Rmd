@@ -132,15 +132,25 @@ covid_testing %>%
   summarize(col_ver_tat_median = ___________)
 ```
 
+c) The median number of orders per day
+
+```{r}
+covid_testing %>%
+   group_by(_________) %>%
+   summarize(_________) %>%
+  
+```
+
 ## Group_by %>% Summarize examples
 
 ### Number of tests per day
+
 ```{r, eval=FALSE}
-tmp <- covid_testing %>%
+tests_per_day <- covid_testing %>%
   group_by(pan_day) %>%
   summarize(n_tests = n())
 
-ggplot(data = tmp) +
+ggplot(data = tests_per_day) +
   geom_point(aes(x = pan_day, y = n_tests)) +
   geom_smooth(aes(x = pan_day, y = n_tests), method = 'loess') +
   ylab("# of tests") +
@@ -150,6 +160,7 @@ ggplot(data = tmp) +
 ## What else
 
 ### Test for association
+
 ```{r}
 covid_testing_2 <- covid_testing %>%
   mutate(payor_group_fac = case_when(
@@ -165,16 +176,16 @@ covid_testing_2 <- covid_testing %>%
 
 ```{r}
 # Generate counts
-tmp_table_tall <- covid_testing_2 %>% 
+payor_table_tall <- covid_testing_2 %>% 
   group_by(payor_group_fac, result) %>%
   summarize(n = n()) %>%
   ungroup()
-tmp_table_tall
+payor_table_tall
 
 # Pivot from tall to wide table
-tmp_table_wide <- tmp_table_tall %>%
-  spread(key = "result", value = "n")
-tmp_table_wide
+payor_table_wide <- payor_table_tall %>%
+  pivot_wider(names_from = result, values_from = n)
+payor_table_wide
 ```
 
 ```{r}
@@ -185,6 +196,7 @@ tmp_table_wide %>%
 ```
 
 ### Logistic Regression
+
 ```{r}
 tmp <- covid_testing_2 %>%
   filter(payor_group_fac %in% c("commercial", "government")) %>%
