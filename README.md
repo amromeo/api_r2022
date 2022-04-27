@@ -17,8 +17,9 @@ This introductory R workshop aims to teach participants with little or no progra
 
 For the best experience, please have the following ready before the workshop begins:
 
+- You must have a laptop to participate in the workshop. There will not be workstations available at the conference center.
 - Install the latest version of [Google Chrome](https://www.google.com/chrome/) as some [older browsers](https://support.rstudio.com/hc/en-us/articles/227449447-Supported-browsers-for-RStudio-Connect) may not be compatible with the RStudio application).
-- We may need to use "RStudio Cloud" as a backup training environment. Please sign up for a free account [here](https://rstudio.cloud/).
+- We _may_ need to use "RStudio Cloud" as a backup training environment. Please sign up for a free account [here](https://rstudio.cloud/), just in case. If any issues with our own environment arise, we will switch to "RStudio Cloud".
 
 ### Get Set...
 
@@ -31,12 +32,12 @@ The workshop is scheduled to begin on 5/9 at 8 am ET. Please make every effort t
 
 ## Accessing/interacting with the course content
 
-1. Course content will be pre-loaded in the RStudio instance that we will be working with and is available for download there as a .zip file.
-2. The content is available at [our course github page](https://github.com/amromeo/api_r2022) and can be downloaded from there as well.
+1. Course content will be pre-loaded in the RStudio instance that we will be working with on the day of the workshop and will be available for download there as a .zip file.
+2. The content is also available now at [our course github page](https://github.com/amromeo/api_r2022) and can be downloaded from there as well.
 
 ## Installing RStudio onto your own computer
 
-We will be utilizing our cloud based RStudio instance in the workshop. However, _in the long term_, you will need R and RStudio installed **on your own computer** in order to work on private data. You can find step by step instructions for installing these on macOS ([here](https://www.youtube.com/watch?v=GM88tYlEy_g)) or Windows ([here](https://www.youtube.com/watch?v=JRKmZK5-6aE)).
+We will be utilizing our own cloud based RStudio instance in the workshop. However, _in the long term_, you will need R and RStudio installed **on your own computer** in order to work on private data. You can find step by step instructions for installing these on macOS ([here](https://www.youtube.com/watch?v=GM88tYlEy_g)) or Windows ([here](https://www.youtube.com/watch?v=JRKmZK5-6aE)).
 
 
 ## Acknowledgments
