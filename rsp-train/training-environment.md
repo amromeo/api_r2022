@@ -27,11 +27,26 @@ docker run --privileged -it \
 ### Deploy to AWS
 
 - Register `api-r.cloud` using AWS Route 53 (only need to do this once)
-- Create a public `c5a.4xlarge` instance ($0.41/hr), with security groups configured to allow HTTP, HTTPS, and SSH
-- Configure an A record sending `api-r.cloud` to the public IP of the instance
+- Create a public `c5a.4xlarge` instance ($0.41/hr), with security groups configured to allow HTTP, HTTPS, and SSH. In the EC2 console, start the launch wizard and set the following:
+    - Name: `api-r.cloud`
+    - Amazon Machine Image (AMI): Ubuntu, 64 bit (select the default one)
+    - Instance type: `c5a.4xlarge` (16 vCPU, 32 GiB RAM)
+    - Key pair: `api-r`
+    - Network Settings:
+        - Allow SSH traffict from: Anywhere (0.0.0.0/0) - note this is usually not considered best practice but risk is mitigated because we are only running the instance for ~24 hours.
+        - Allow HTTPs traffic from the internet
+        - Allow HTTP traffic from the internet
+    - Storage: 100 GiB
+    - Once all loaded up, make a note of the instance's public IP address
+- Configure an A record sending `api-r.cloud` to the public IP of the instance. In the Route 53 service, select the Registered Domains -> `api-r.cloud` -> Create hosted zone -> Domain name: `api-r.cloud`
+    - Create record -> Simple routing -> Define simple record
+        - Record name: `api-r.cloud`
+        - Record type: A
+        - Value/Route traffic to: IP address - enter the EC2 instance's public IP address
 
 ```bash
-ssh ubuntu@api-r.cloud
+# Place api-r.pem into ~/.ssh and make sure permissions are set to 400 (owner read and write only)
+ssh -i ~/.ssh/api-r.pem ubuntu@api-r.cloud
 ```
 
 ```bash
