@@ -43,6 +43,8 @@ docker run --privileged -it \
         - Record name: `api-r.cloud`
         - Record type: A
         - Value/Route traffic to: IP address - enter the EC2 instance's public IP address
+    - Registered domains
+        - Add/edit nameservers -> Update the nameservers so they match the ones in the `NS` record of the hosted zone
 
 ```bash
 # Place api-r.pem into ~/.ssh and make sure permissions are set to 400 (owner read and write only)
