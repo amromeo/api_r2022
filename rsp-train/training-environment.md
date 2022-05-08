@@ -157,3 +157,8 @@ Test the configuration and restart Nginx:
 sudo nginx -t
 sudo systemctl restart nginx
 ```
+
+### Teardown
+
+- In the EC2 service, terminate the EC2 instance
+- In Route 53, delete the `api-r.cloud` hosted zone
