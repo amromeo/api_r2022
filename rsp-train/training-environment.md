@@ -4,6 +4,8 @@ This documents the steps to set up an RStudio Server Pro training instance for t
 
 The goal is to create an RSP instance reachable at <https://api-r.cloud>. We will use the `rsp-train` Docker image and deploy to AWS, as detailed [here](https://github.com/skadauke/rsp-train).
 
+Note that we assume you have an AWS account with privileges to deploy an EC2 instance to the public internet, and that you have an active RStudio Server Pro (RStudio Workbench) license.
+
 ## Local testing
 
 ```bash
@@ -15,7 +17,7 @@ docker run --privileged -it \
     -e USER_PREFIX=apir \
     -e N_USERS=100 \
     -e PW_SEED=12345 \
-    -e GH_REPO=https://github.com/amromeo/api_r2021 \
+    -e GH_REPO=https://github.com/amromeo/api_r2022 \
     -e R_PACKAGES=rmarkdown,shiny,DT,flexdashboard \
     -e RSP_LICENSE=$RSP_LICENSE \
     -v "$PWD/rsp-train/custom-login":/etc/rstudio \
@@ -24,9 +26,9 @@ docker run --privileged -it \
 
 ### Deploy to AWS
 
-- Registered `api-r.cloud` using AWS Route 53
-- Created public `c5a.4xlarge` instance ($0.41/hr), with security groups configured to allow HTTP, HTTPS, and SSH
-- Configured A record sending `api-r.cloud` to the public IP of the instance
+- Register `api-r.cloud` using AWS Route 53 (only need to do this once)
+- Create a public `c5a.4xlarge` instance ($0.41/hr), with security groups configured to allow HTTP, HTTPS, and SSH
+- Configure an A record sending `api-r.cloud` to the public IP of the instance
 
 ```bash
 ssh ubuntu@api-r.cloud
@@ -48,7 +50,7 @@ sudo systemctl enable nginx
 ```
 
 ```
-MY_DOMAIN=uams.r-training.cloud &&
+MY_DOMAIN=api-r.cloud &&
 
 sudo snap install --classic certbot &&
 sudo ln -s /snap/bin/certbot /usr/bin/certbot &&
@@ -74,13 +76,13 @@ sudo apt -y install docker-ce docker-ce-cli containerd.io
 # Replace with valid license
 export RSP_LICENSE=XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX &&
 
-GH_REPO=https://github.com/amromeo/api_r2021 &&
+GH_REPO=https://github.com/amromeo/api_r2022 &&
 
-sudo rm -rf r-training-lecture-uams-2021 &&
+sudo rm -rf api_r2022 &&
 
 git clone $GH_REPO &&
 
-cd api_r2021 &&
+cd api_r2022 &&
 
 sudo docker run --privileged -it \
     --detach-keys "ctrl-a" \
