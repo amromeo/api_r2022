@@ -128,7 +128,7 @@ arrange(toy_data,chars)
 ## Steps and the pipe
 
 ```{r Steps and the pipe}
-# These 3 lines of code are an example of the how we would accomplish a multi-step analysis based on what we've learned so far. 
+# These 3 lines of code are an example of how we would accomplish a multi-step analysis based on what we've learned so far. 
 day_10 <- filter(covid_testing, pan_day <= 10)
 day_10 <- select(day_10, clinic_name)
 day_10 <- arrange(day_10 , clinic_name)
