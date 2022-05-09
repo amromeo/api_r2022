@@ -190,7 +190,7 @@ payor_table_wide
 
 ```{r}
 # Hypergeometric test for association
-tmp_table_wide %>%
+payor_table_wide %>%
   select(-payor_group_fac) %>%
   fisher.test(simulate.p.value = T)
 ```
